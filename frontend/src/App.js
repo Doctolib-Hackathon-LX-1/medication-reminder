@@ -3,8 +3,10 @@ import axios from 'axios';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 // Router File Imports
-import Home from './components/Home';
-import About from './components/About';
+
+import HomePage from './components/home/HomePage';
+import SetMedication from './components/medicationform/SetMedication';
+import AgendaPage from './components/agenda/AgendaPage';
 
 function App() {
 
@@ -18,8 +20,9 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Switch>
-          <Route exact path="/" component={Home} />
-          <Route path="/about" component={About} />
+          <Route exact path="/" component={HomePage} />
+          <Route path="/medicationform" component={SetMedication} />
+          <Route path="/agenda" component={AgendaPage} />
         </Switch>
       </BrowserRouter>
     </div>
