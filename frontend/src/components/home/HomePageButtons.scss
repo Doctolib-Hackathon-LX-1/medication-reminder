@@ -1,0 +1,26 @@
+// .new-med {
+//   display: flex;
+
+// }
+
+.new-med {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10vh;
+
+  button {
+    height: 20vh;
+  }
+}
+
+.prescription {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+
+  button {
+    height: 20vh;
+  }
+}
