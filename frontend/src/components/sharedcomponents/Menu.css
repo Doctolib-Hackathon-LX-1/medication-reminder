@@ -1,0 +1,70 @@
+.Menu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+}
+
+.menu-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  background-color: hsl(203, 81%, 34%);
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+}
+
+.menu-section a {
+  display: flex;
+  flex-direction: row;
+  text-decoration: none;
+}
+
+.menu-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 30%;
+  margin: 12px 40px;
+  color: white;
+}
+
+.menu-user {
+  width: 40px;
+  height: 40px;
+}
+.menu-medication {
+  width: 35px;
+  height: 35px;
+}
+.menu-calendar {
+  width: 45px;
+  height: 45px;
+}
+.menu-plus {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+}
+
+@media(max-width: 768px) {
+  .menu-user {
+    width: 30px;
+    height: 30px;
+  }
+  .menu-medication {
+    width: 30px;
+    height: 30px;
+  }
+  .menu-calendar {
+    width: 40px;
+    height: 40px;
+  }
+  .menu-plus {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+  }
+}
