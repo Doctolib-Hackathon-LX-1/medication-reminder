@@ -14,6 +14,7 @@ connection.connect((err) => {
 });
 
 // implement the API part
+
 app.get('/api', (req, res) => {
   res.send('Hello World');
 });
@@ -25,6 +26,22 @@ app.get('/medication', (req, res) => {
       : res.status(200).json(results);
   });
 });
+
+app.post("/newmedication", (req, res) => {
+
+const reccurenceRule = req.body;
+
+console.log('req.body', reccurenceRule)
+
+    connection.query('INSERT INTO medication SET ?', [reccurenceRule], (err, results) => {
+        if (err) {
+            console.log(err)
+            res.status(500).send("Error creating the new medication");
+        } else {
+            res.status(200).send("Medication Successfully added your calendar");        
+        }
+    });
+})
 
 // launch the node server
 let server = app.listen(process.env.PORT || 5000, function () {
