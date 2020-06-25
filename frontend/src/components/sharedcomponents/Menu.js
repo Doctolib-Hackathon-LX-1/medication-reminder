@@ -15,16 +15,19 @@ const Menu = () => {
                     <div className="menu-item">
                         <img className="menu-plus" src={plus}/>
                         <img className="menu-medication" src={medication}/>
+                        <div className="menu-text">Set new medication</div>
                     </div>
                 </Link>
                 <Link to="/agenda">
                     <div className="menu-item">
                         <img className="menu-calendar" src={calendar}/>
+                        <div className="menu-text">Medication Calendar</div>
                     </div>
                 </Link>
-                <Link to="">
+                <Link to="/">
                     <div className="menu-item">
                         <img className="menu-user" src={user}/>
+                        <div className="menu-text">User</div>
                     </div>
                 </Link>
             </div>
