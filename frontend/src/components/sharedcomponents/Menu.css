@@ -8,7 +8,7 @@
 .menu-section {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-evenly;
   width: 100%;
   background-color: hsl(203, 81%, 34%);
   border-top-right-radius: 5px;
@@ -26,8 +26,7 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  width: 30%;
-  margin: 12px 40px;
+  margin: 12px 0px;
   color: white;
 }
 
@@ -49,22 +48,32 @@
   margin-right: 5px;
 }
 
+.menu-text {
+  margin-left: 10px;
+  width: 60px;
+}
+
 @media(max-width: 768px) {
   .menu-user {
     width: 30px;
     height: 30px;
   }
   .menu-medication {
-    width: 30px;
-    height: 30px;
+    width: 25px;
+    height: 25px;
   }
   .menu-calendar {
-    width: 40px;
-    height: 40px;
+    width: 35px;
+    height: 35px;
   }
   .menu-plus {
-    width: 20px;
-    height: 20px;
-    margin-right: 5px;
+    width: 15px;
+    height: 15px;
+    margin-right: 2px;
+  }
+  .menu-text {
+    font-size: 12px;
+    width: 55px;
+    margin-left: 3px;
   }
 }
