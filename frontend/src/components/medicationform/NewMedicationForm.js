@@ -30,8 +30,9 @@ const NewMedicationForm = () => {
             OwnerColor: ""
         })
         console.log('newobject', newObject)
+        console.log('newobj json', JSON.stringify(newObject))
 
-        axios.get('/api')
+        axios.post('/newmedication')
         .then(res => console.log(res.data))
     };
 
