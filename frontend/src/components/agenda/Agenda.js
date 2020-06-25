@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './Agenda.css';
+import axios from 'axios';
 
 import {
   ScheduleComponent,
@@ -11,10 +12,7 @@ import {
   Agenda,
   ViewsDirective,
   ViewDirective,
-  ResourcesDirective,
-  ResourceDirective,
 } from '@syncfusion/ej2-react-schedule';
-// import { Internationalization, extend, L10n } from '@syncfusion/ej2-base';
 import { Internationalization, extend } from '@syncfusion/ej2-base';
 
 const AgendaPage = (props) => {
@@ -46,10 +44,19 @@ const AgendaPage = (props) => {
       OwnerColor: '#ffd7cf',
     },
   ];
-  const [calendarData, setCalendarData] = useState(data);
+  const [calendarData, setCalendarData] = useState([]);
 
   useEffect(() => {
-    setCalendarData(data);
+    console.log("agenda")
+    axios.get('/medication')
+    .then((response) => {
+        console.log("agenda");
+        console.log(response.data);
+        setCalendarData(response.data);
+    });
+
+    //setCalendarData(data);
+
   }, []);
 
   // Loading data via AJAX post
@@ -60,11 +67,7 @@ const AgendaPage = (props) => {
   // };
   // ajax.send();
 
-  const onPopupOpen = (args) => {
-    args.cancel = true;
-  };
-
-  // No Popup on meetings
+  // No Popup on click events / no editing
   // const onPopupOpen = (args) => {
   //     args.cancel = true;
   // }
@@ -88,8 +91,7 @@ const AgendaPage = (props) => {
           {props.Subject}
         </div>
         <div className='time' style={{ backgroundColor: props.OwnerColor }}>
-          Time: {getTimeString(props.StartTime)} -{' '}
-          {getTimeString(props.EndTime)}
+          Time: {getTimeString(props.StartTime)} - {getTimeString(props.EndTime)}
         </div>
       </div>
     );

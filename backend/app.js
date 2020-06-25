@@ -24,8 +24,11 @@ app.get('/medication', (req, res) => {
     err
       ? res.status(500).send('Error retrieving data')
       : res.status(200).json(results);
+    console.log(err);
+    console.log(results);
   });
 });
+
 
 app.post("/newmedication", (req, res) => {
 
