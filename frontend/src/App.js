@@ -22,8 +22,8 @@ function App() {
         <MedicationContextProvider>
           <Switch>
             <Route exact path='/' component={HomePage} />
-            <Route path='/medicationform' component={SetMedication} />
-            <Route path='/agenda' component={AgendaPage} />
+            <Route exact path='/medicationform' component={SetMedication} />
+            <Route exact path='/agenda' component={AgendaPage} />
           </Switch>
         </MedicationContextProvider>
       </BrowserRouter>
