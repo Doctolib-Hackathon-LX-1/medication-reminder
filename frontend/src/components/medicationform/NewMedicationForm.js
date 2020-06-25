@@ -16,12 +16,13 @@ const NewMedicationForm = () => {
         endTime.setMinutes( endTime.getMinutes() + 30 );
 
         const newObject = {
-            id: uuid(),
+            medication_id: uuid(),
             Subject: data.treatment,
             StartTime: new Date(data.start_date),
             EndTime: endTime,
             RecurrenceRule: reccurenceRule,
             OwnerColor: '#7499E1',
+            user_id: 1
         };
         reset({
             Subject: "",
@@ -30,11 +31,19 @@ const NewMedicationForm = () => {
             OwnerColor: ""
         })
         console.log('newobject', newObject)
-        console.log('newobj json', JSON.stringify(newObject))
 
-        axios.post('/newmedication')
-        .then(res => console.log(res.data))
+        postNewEvent(newObject); 
+
     };
+
+    const postNewEvent = (newObject) => {
+        axios({   
+            method: 'post',   
+            url: '/newmedication',   
+            data: newObject 
+        })
+        .then((response) => console.log(response));
+    }
 
     const getRule = (rule) => {
         setReccurenceRule(rule)

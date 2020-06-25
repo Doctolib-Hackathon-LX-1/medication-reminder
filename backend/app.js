@@ -5,7 +5,7 @@ const morgan = require('morgan');
 const connection = require('./config');
 
 app.use(morgan('dev'));
-app.use(express.json())
+app.use(express.json());
 
 connection.connect(err => {
     err ?
@@ -15,7 +15,7 @@ connection.connect(err => {
 })
 
 // implement the API part
-app.get("/api", (req, res) => {
+app.get("/", (req, res) => {
     res.send("Hello World");
 })
 
@@ -23,9 +23,11 @@ app.post("/newmedication", (req, res) => {
 
 const reccurenceRule = req.body;
 
-    connection.query('INSERT INTO medication (Subject, StartTime, EndTime, RecurrenceRule, OwnerColor) VALUES  ?'
-    , [reccurenceRule], (err, results) => {
+console.log('req.body', reccurenceRule)
+
+    connection.query('INSERT INTO medication SET ?', [reccurenceRule], (err, results) => {
         if (err) {
+            console.log(err)
             res.status(500).send("Error creating the new medication");
         } else {
             res.status(200).send("Medication Successfully added your calendar");        
