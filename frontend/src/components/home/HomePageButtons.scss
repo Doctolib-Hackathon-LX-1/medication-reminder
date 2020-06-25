@@ -1,26 +1,31 @@
 // .new-med {
 //   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   margin-top: 10vh;
 
+//   button {
+//     height: 20vh;
+//   }
 // }
-
-.new-med {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 10vh;
-
-  button {
-    height: 20vh;
-  }
-}
 
 .prescription {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 10px;
+  margin: 10px;
 
-  button {
-    height: 20vh;
+  a {
+    text-decoration: none;
+  }
+}
+
+.new-med {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 10px 0px 10px;
+  a {
+    text-decoration: none;
   }
 }

@@ -10,8 +10,13 @@
   align-items: center;
   justify-content: flex-end;
   width: 100%;
+
+  img {
+    margin-right: 7px;
+  }
 }
 
 .img-name {
-  margin-right: 2px;
+  margin-right: 5px;
+  color: #d3e9fb;
 }

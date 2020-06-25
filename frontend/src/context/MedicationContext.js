@@ -3,7 +3,7 @@ import React, { createContext, useState, useEffect } from 'react';
 export const MedicationContext = createContext();
 
 const MedicationContextProvider = (props) => {
-  const [medication, setMedication] = useState('a');
+  const [medication, setMedication] = useState(2);
 
   useEffect(() => {
     // Axios call from backend
