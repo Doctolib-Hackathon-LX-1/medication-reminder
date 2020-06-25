@@ -1,10 +1,11 @@
 import React from 'react';
 import HomePageButtons from './HomePageButtons';
 import Header from '../sharedcomponents/Header';
+import './HomePage.scss';
 
 function HomePage() {
   return (
-    <div>
+    <div className='homeWrapper'>
       <Header />
       <HomePageButtons />
     </div>
