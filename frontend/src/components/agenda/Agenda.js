@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './Agenda.css';
+
 import { ScheduleComponent, Inject, Day, Week, WorkWeek, Month, Agenda, ViewsDirective, ViewDirective, ResourcesDirective, ResourceDirective} from '@syncfusion/ej2-react-schedule';
 // import { Internationalization, extend, L10n } from '@syncfusion/ej2-base';
 import { Internationalization, extend } from '@syncfusion/ej2-base';
@@ -33,18 +34,21 @@ const AgendaPage = (props) => {
 ]
     const [calendarData, setCalendarData] = useState(data);
 
-    useEffect(() => {
-        setCalendarData(data);
-    },[]);
+  useEffect(() => {
+    setCalendarData(data);
+  }, []);
 
+  // Loading data via AJAX post
+  // const dataManager = [];
+  // const ajax = new Ajax('Home/GetData', 'GET', false);
+  // ajax.onSuccess = function (value) {
+  //     dataManager = value;
+  // };
+  // ajax.send();
 
-    // Loading data via AJAX post
-    // const dataManager = [];
-    // const ajax = new Ajax('Home/GetData', 'GET', false);
-    // ajax.onSuccess = function (value) {
-    //     dataManager = value;
-    // };
-    // ajax.send();
+  const onPopupOpen = (args) => {
+    args.cancel = true;
+  };
 
     // No Popup on meetings
     // const onPopupOpen = (args) => {
@@ -90,7 +94,9 @@ const AgendaPage = (props) => {
                 </div>
             </div>
         </div>
-     );
-}
- 
+      </div>
+    </div>
+  );
+};
+
 export default AgendaPage;

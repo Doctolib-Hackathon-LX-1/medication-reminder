@@ -10,7 +10,7 @@
   flex-wrap: wrap;
   justify-content: space-evenly;
   width: 100%;
-  background-color: hsl(203, 81%, 34%);
+  background-color: #10679d;
   border-top-right-radius: 5px;
   border-top-left-radius: 5px;
 }

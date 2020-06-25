@@ -1,15 +1,15 @@
 import React from 'react';
 import HomePageButtons from './HomePageButtons';
 import Header from '../sharedcomponents/Header';
+import './HomePage.scss';
 
 function HomePage() {
-    return (
-        <div>
-            <h1>Welcome to the Homepage</h1>
-            <Header />
-            <HomePageButtons />
-        </div>
-    )
+  return (
+    <div className='homeWrapper'>
+      <Header />
+      <HomePageButtons />
+    </div>
+  );
 }
 
 export default HomePage;
