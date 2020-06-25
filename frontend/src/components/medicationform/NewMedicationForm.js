@@ -1,6 +1,7 @@
 import React, { useState }from 'react';
 import { useForm } from "react-hook-form";
 import SelectDateFrame from './SelectDateFrame';
+import { GithubPicker } from 'react-color';
 import uuid from 'uuid';
 import axios from 'axios';
 
@@ -8,6 +9,9 @@ const NewMedicationForm = () => {
 
     const { register, handleSubmit, reset } = useForm();
     const [ reccurenceRule, setReccurenceRule ]= useState("");
+    const [ toggleMode, setToggleMode]= useState(false);
+    const [ color, setColor]= useState();
+
 
 
     const onSubmit = (data) => {
@@ -21,7 +25,7 @@ const NewMedicationForm = () => {
             StartTime: new Date(data.start_date),
             EndTime: endTime,
             RecurrenceRule: reccurenceRule,
-            OwnerColor: '#7499E1',
+            OwnerColor: color,
             user_id: 1
         };
         reset({
@@ -37,13 +41,19 @@ const NewMedicationForm = () => {
     };
 
     const postNewEvent = (newObject) => {
-        axios({   
-            method: 'post',   
-            url: '/newmedication',   
-            data: newObject 
-        })
+        axios
+        .post('/newmedication', newObject)
         .then((response) => console.log(response));
     }
+
+    const handleClick = () => {
+        setToggleMode(!toggleMode);
+    }
+
+    const handleChangeComplete = (color, event) => {
+        setColor(color.hex);
+        setToggleMode(!toggleMode);
+    };
 
     const getRule = (rule) => {
         setReccurenceRule(rule)
@@ -53,11 +63,14 @@ const NewMedicationForm = () => {
         <div>
             <form onSubmit={handleSubmit(onSubmit)}>
                 <p>Treatment: </p>
+                <button onClick={handleClick}>{!toggleMode && 'Pick a color'}</button>
+               {toggleMode && 
+                <GithubPicker onChangeComplete={handleChangeComplete}/>}
                 <input type="text" placeholder="Treatment" name="treatment" ref={register}/>
                 <p>Starting date: </p>
                 <input type="datetime-local" placeholder="start_date" name="start_date" ref={register}/>
-            <SelectDateFrame recurrenceRule={reccurenceRule} getRule={getRule}/>
-            <button type="submit">Add to Agenda</button>
+                <SelectDateFrame recurrenceRule={reccurenceRule} getRule={getRule}/>
+                <button type="submit">Add to Agenda</button>
             </form>
         </div>
      );
