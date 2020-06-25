@@ -94,7 +94,7 @@ const NewMedicationForm = () => {
           ref={register}
         />
         <SelectDateFrame recurrenceRule={reccurenceRule} getRule={getRule} />
-        <button type='submit'>Add to Agenda</button>
+        <button type='submit'>Add to calendar</button>
       </form>
       <div>
         <Dialog
@@ -106,7 +106,7 @@ const NewMedicationForm = () => {
             {'Your treatment has been successfully created.'}
           </DialogTitle>
           <DialogActions>
-            <Link to='/agenda' className='modal-ok-link'>
+            <Link to='/calendar' className='modal-ok-link'>
               <Button onClick={handleClose} color='primary' autoFocus>
                 OK
               </Button>
