@@ -9,7 +9,6 @@ const useStyles = makeStyles({
   TypoStyle: {
     textAlign: 'center',
     fontFamily: 'Monospace',
-    color: 'secondary',
   },
   ButtonStyle: {},
 });
@@ -20,6 +19,21 @@ const HomePageButtons = () => {
 
   const medicationHasData = () => {
     if (medication) {
+      const mappedMedication = medication.map((med) => {
+        return (
+          <span>
+            <Button fullWidth variant='outlined'>
+              <Typography
+                className={classes.TypoStyle}
+                variant='h5'
+                color='primary'>
+                {med.Subject}
+              </Typography>
+            </Button>
+          </span>
+        );
+      });
+
       return (
         <div>
           <div className='prescription'>
@@ -33,11 +47,9 @@ const HomePageButtons = () => {
                   className={classes.TypoStyle}
                   variant='h3'
                   color='primary'>
-                  CURRENT MEDICATION
+                  MEDICATION CALENDAR
                 </Typography>
-                <div>
-                  {/* Receives data from the form passed by the context */}
-                </div>
+                {mappedMedication}
               </Button>
             </Link>
           </div>

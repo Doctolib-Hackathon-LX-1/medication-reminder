@@ -29,22 +29,24 @@ app.get('/medication', (req, res) => {
   });
 });
 
+app.post('/newmedication', (req, res) => {
+  const reccurenceRule = req.body;
 
-app.post("/newmedication", (req, res) => {
+  console.log('req.body', reccurenceRule);
 
-const reccurenceRule = req.body;
-
-console.log('req.body', reccurenceRule)
-
-    connection.query('INSERT INTO medication SET ?', [reccurenceRule], (err, results) => {
-        if (err) {
-            console.log(err)
-            res.status(500).send("Error creating the new medication");
-        } else {
-            res.status(200).send("Medication Successfully added your calendar");        
-        }
-    });
-})
+  connection.query(
+    'INSERT INTO medication SET ?',
+    [reccurenceRule],
+    (err, results) => {
+      if (err) {
+        console.log(err);
+        res.status(500).send('Error creating the new medication');
+      } else {
+        res.status(200).send('Medication Successfully added your calendar');
+      }
+    }
+  );
+});
 
 // launch the node server
 let server = app.listen(process.env.PORT || 5000, function () {

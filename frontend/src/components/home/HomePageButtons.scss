@@ -29,3 +29,19 @@
     text-decoration: none;
   }
 }
+
+.MuiButton-label {
+  display: table !important;
+  width: 100%;
+  align-items: inherit;
+  justify-content: inherit;
+}
+
+.MuiButton-fullWidth {
+  margin-bottom: 5px !important;
+  margin-top: 5px !important;
+}
+
+.MuiButton-outlined {
+  border: 3px solid #11689e !important;
+}

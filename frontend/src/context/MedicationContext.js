@@ -8,7 +8,7 @@ const MedicationContextProvider = (props) => {
 
   useEffect(() => {
     axios.get('/medication').then((response) => {
-      setMedication(response.data[0]);
+      setMedication(response.data);
     });
   }, []);
 
