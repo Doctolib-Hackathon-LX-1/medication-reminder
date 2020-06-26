@@ -6,7 +6,8 @@ import './Agenda.css';
 
 const AgendaPage = () => {
     return ( 
-        <div className='agendaWrapper'>
+
+        <div className="agendaWrapper">
             <Header />
             <Agenda />
             <Menu />

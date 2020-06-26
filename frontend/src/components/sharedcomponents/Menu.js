@@ -5,7 +5,7 @@ import user from '../../assets/user.png';
 import medication from '../../assets/medication.png';
 import plus from '../../assets/plus.png';
 import calendar from '../../assets/calendar.png';
-
+import group from '../../assets/group.png';
 
 const Menu = () => {
     return ( 
@@ -24,10 +24,10 @@ const Menu = () => {
                         <div className="menu-text">Medication Calendar</div>
                     </div>
                 </Link>
-                <Link to="/">
+                <Link to="/about">
                     <div className="menu-item">
-                        <img className="menu-user" src={user}/>
-                        <div className="menu-text">User</div>
+                        <img className="menu-user" src={group}/>
+                        <div className="menu-text">About us</div>
                     </div>
                 </Link>
             </div>
