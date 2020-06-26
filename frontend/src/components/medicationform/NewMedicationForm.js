@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
 import SelectDateFrame from './SelectDateFrame';
@@ -16,6 +16,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import uuid from 'uuid';
 import axios from 'axios';
 import './NewMedicationForm.scss';
+import { MedicationContext } from '../../context/MedicationContext';
 
 const useStyles = makeStyles({
   TypoStyle: {
@@ -25,6 +26,8 @@ const useStyles = makeStyles({
 });
 
 const NewMedicationForm = () => {
+
+  const { getAllMedication } = useContext(MedicationContext);
   const { register, handleSubmit, reset } = useForm();
   const [reccurenceRule, setReccurenceRule] = useState('');
   const [toggleMode, setToggleMode] = useState(false);
@@ -67,7 +70,7 @@ const NewMedicationForm = () => {
   const postNewEvent = (newObject) => {
     axios
       .post('/newmedication', newObject)
-      .then((response) => console.log(response));
+      .then(() => getAllMedication());
   };
 
   const handleClick = () => {
