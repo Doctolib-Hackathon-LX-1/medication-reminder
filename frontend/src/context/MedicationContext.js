@@ -6,15 +6,19 @@ export const MedicationContext = createContext();
 const MedicationContextProvider = (props) => {
   const [medication, setMedication] = useState();
 
-  useEffect(() => {
+  const getAllMedication = () => {
     axios.get('/medication').then((response) => {
       setMedication(response.data);
     });
+  }
+  
+  useEffect(() => {
+    getAllMedication()
   }, []);
 
   return (
     <div>
-      <MedicationContext.Provider value={{ medication }}>
+      <MedicationContext.Provider value={{ medication, getAllMedication }}>
         {props.children}
       </MedicationContext.Provider>
     </div>
