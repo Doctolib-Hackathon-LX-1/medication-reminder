@@ -75,9 +75,10 @@ const NewMedicationForm = () => {
   };
 
   const handleChangeComplete = (color, event) => {
-    setColor(color.hex);
     setToggleMode(!toggleMode);
+    setColor(color.hex);
   };
+  console.log('color picker', color);
 
   const getRule = (rule) => {
     setReccurenceRule(rule);
@@ -107,9 +108,13 @@ const NewMedicationForm = () => {
             />
           </div>
           <div className='colorButton'>
-            <button onClick={handleClick}>
-              {!toggleMode && 'Pick a color'}
-            </button>
+            <Button
+              style={{ background: `${color}` }}
+              color='secondary'
+              variant='contained'
+              onClick={handleClick}>
+              {!toggleMode && 'Pick a tag color'}
+            </Button>
             {toggleMode && (
               <GithubPicker onChangeComplete={handleChangeComplete} />
             )}
@@ -118,12 +123,14 @@ const NewMedicationForm = () => {
         <div className='formSelectDateFrame'>
           <SelectDateFrame recurrenceRule={reccurenceRule} getRule={getRule} />
         </div>
-        <button
+        <Button
+          color='secondary'
+          variant='contained'
           type='submit'
           className='submitButton'
           onClick={handleClickOpen}>
           Add to calendar
-        </button>
+        </Button>
       </form>
       <div>
         <Dialog

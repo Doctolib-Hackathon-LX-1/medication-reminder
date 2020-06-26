@@ -40,19 +40,19 @@
 }
 
 .colorButton {
-  margin: 20px 0;
+  margin: 0 0 20px 0;
 }
 
 .submitButton {
   margin: 20px 0;
 }
 
-.formInput input[type="text" i] {
+.formInput input[type='text' i] {
   padding: 1px 2px;
   width: 50%;
 }
 
-.formInput input[type="datetime-local" i] {
+.formInput input[type='datetime-local' i] {
   padding: 1px 2px;
   width: 50%;
 }
@@ -63,7 +63,7 @@
   flex-wrap: nowrap;
 }
 
-.formSelectDateFrame  {
+.formSelectDateFrame {
   width: 90%;
 }
 
@@ -74,4 +74,8 @@
 
 .modal-ok-link {
   text-decoration: none !important;
+}
+
+.MuiButton-root {
+  margin-top: 20px !important;
 }
