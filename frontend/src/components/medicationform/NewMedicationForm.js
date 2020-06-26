@@ -62,7 +62,6 @@ const NewMedicationForm = () => {
     console.log('newobject', newObject);
 
     postNewEvent(newObject);
-    handleClickOpen();
   };
 
   const postNewEvent = (newObject) => {
@@ -119,7 +118,10 @@ const NewMedicationForm = () => {
         <div className='formSelectDateFrame'>
           <SelectDateFrame recurrenceRule={reccurenceRule} getRule={getRule} />
         </div>
-        <button type='submit' className='submitButton'>
+        <button
+          type='submit'
+          className='submitButton'
+          onClick={handleClickOpen}>
           Add to calendar
         </button>
       </form>
