@@ -128,4 +128,33 @@ const NewMedicationForm = () => {
   );
 };
 
+    return ( 
+        <div className='formPageWrapper'>
+            <div className='formTitle'>Schedule your treatment</div>
+            <form onSubmit={handleSubmit(onSubmit)} className='formWrapper'>
+                <div className='aroundForm'>
+                    <div className='formInput'>
+                        <p>Treatment: </p>
+                        <input type="text" placeholder="Title" name="treatment" ref={register}/>
+                        </div>
+                        <div className='formInput'>
+                        <p>Starting date: </p>
+                        <input type="datetime-local" placeholder="start_date" name="start_date" ref={register}/>
+                        </div>
+                        <div className='colorButton'>
+                            <button onClick={handleClick}>{!toggleMode && 'Pick a color'}</button>
+                        {toggleMode && 
+                            <GithubPicker onChangeComplete={handleChangeComplete}/>}
+                        </div>
+                    </div>
+                        <div className='formSelectDateFrame'>
+                        <SelectDateFrame recurrenceRule={reccurenceRule} getRule={getRule}/>
+                        </div>
+                    <button type="submit" className='submitButton'>Add to Agenda</button>
+            </form>
+        </div>
+     );
+}
+ 
 export default NewMedicationForm;
+
