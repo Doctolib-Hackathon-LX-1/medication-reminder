@@ -10,10 +10,19 @@ import {
   DialogContent,
   DialogContentText,
   DialogTitle,
+  Typography,
 } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles';
 import uuid from 'uuid';
 import axios from 'axios';
 import './NewMedicationForm.scss';
+
+const useStyles = makeStyles({
+  TypoStyle: {
+    textAlign: 'center',
+    fontFamily: 'Monospace',
+  },
+});
 
 const NewMedicationForm = () => {
   const { register, handleSubmit, reset } = useForm();
@@ -21,6 +30,7 @@ const NewMedicationForm = () => {
   const [toggleMode, setToggleMode] = useState(false);
   const [color, setColor] = useState();
   const [open, setOpen] = useState(false);
+  const classes = useStyles();
 
   const handleClickOpen = () => {
     setOpen(true);
