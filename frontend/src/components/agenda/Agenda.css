@@ -1,3 +1,9 @@
+.agendaWrapper {
+  width: 100vw;
+  height: 100vh;
+  background: url(./../../styling/halacious.jpg);
+  background-size: cover;
+}
 
 .Agenda {
   display: flex;

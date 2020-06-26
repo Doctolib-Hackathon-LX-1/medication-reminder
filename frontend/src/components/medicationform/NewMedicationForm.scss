@@ -1,0 +1,74 @@
+.formTitle {
+  width: 100%;
+  flex-wrap: wrap;
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  margin: 25px 0;
+  text-align: center;
+}
+
+.medicationWrapper {
+  height: 100vh;
+  background: url(../../assets/BG.png);
+  background-size: cover;
+}
+
+.formWrapper {
+  height: 60%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.aroundForm {
+  height: 100%;
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.formInput {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.colorButton {
+  margin: 20px 0;
+}
+
+.submitButton {
+  margin: 20px 0;
+}
+
+.formInput input[type="text" i] {
+  padding: 1px 2px;
+  width: 50%;
+}
+
+.formInput input[type="datetime-local" i] {
+  padding: 1px 2px;
+  width: 50%;
+}
+
+.formInput p {
+  color: white;
+  font-weight: 500;
+  flex-wrap: nowrap;
+}
+
+.formSelectDateFrame  {
+  width: 90%;
+}
+
+.e-editor {
+  padding: 10px 20px;
+  background-color: white;
+}
+
