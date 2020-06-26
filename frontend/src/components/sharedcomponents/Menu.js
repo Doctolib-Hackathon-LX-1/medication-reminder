@@ -7,7 +7,6 @@ import plus from '../../assets/plus.png';
 import calendar from '../../assets/calendar.png';
 import group from '../../assets/group.png';
 
-
 const Menu = () => {
     return ( 
         <div className="Menu">

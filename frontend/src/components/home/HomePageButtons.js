@@ -37,7 +37,7 @@ const HomePageButtons = () => {
       return (
         <div>
           <div className='prescription'>
-            <Link to='/agenda'>
+            <Link to='/calendar'>
               <Button
                 className={classes.ButtonStyle}
                 fullWidth
