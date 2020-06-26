@@ -24,7 +24,7 @@ function App() {
           <Switch>
             <Route exact path='/' component={HomePage} />
             <Route exact path='/medicationform' component={SetMedication} />
-            <Route exact path='/agenda' component={AgendaPage} />
+            <Route exact path='/calendar' component={AgendaPage} />
             <Route exact path='/about' component={About} />
           </Switch>
         </MedicationContextProvider>
