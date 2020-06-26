@@ -3,6 +3,8 @@
   flex-wrap: wrap;
   justify-content: center;
   width: 100%;
+  position: fixed;
+  bottom: 0;
 }
 
 .menu-section {
