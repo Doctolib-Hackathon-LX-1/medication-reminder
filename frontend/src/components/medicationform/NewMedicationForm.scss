@@ -16,11 +16,12 @@
 
 .formWrapper {
   height: 60%;
-  width: 100%;
+  width: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  margin: auto;
 }
 
 .aroundForm {
@@ -39,6 +40,12 @@
   width: 100%;
 }
 
+.formInput input {
+  font-family: "Montserrat", arial, sans-serif;
+  color: rgb(101, 101, 101) !important;
+  height: 25px;
+}
+
 .colorButton {
   margin: 20px 0;
 }
@@ -48,12 +55,12 @@
 }
 
 .formInput input[type="text" i] {
-  padding: 1px 2px;
+  padding: 2px 5px;
   width: 50%;
 }
 
 .formInput input[type="datetime-local" i] {
-  padding: 1px 2px;
+  padding: 2px 5px;
   width: 50%;
 }
 
@@ -74,4 +81,10 @@
 
 .modal-ok-link {
   text-decoration: none !important;
+}
+
+@media(max-width: 768px) {
+  .formWrapper {
+    width: 100%;
+  }
 }
